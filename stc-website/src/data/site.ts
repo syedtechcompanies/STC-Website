@@ -2,10 +2,6 @@ import {
   BarChart3,
   Cloud,
   Code2,
-  Handshake,
-  Headphones,
-  Lock,
-  ShieldCheck,
   Smartphone,
   type LucideIcon,
 } from "lucide-react";
@@ -15,19 +11,15 @@ export const siteConfig = {
   shortName: "STC",
   tagline: "Innovate • Build • Grow",
   description:
-    "STC is a modern tech company building web, mobile, cloud and marketing solutions for a better tomorrow.",
-  email: "info@stc.com",
-  phone: "+92 300 0000000",
-  address: "Pakistan",
+    "Syed Tech Company offers web, mobile, cloud and digital marketing services. Explore the services and share your project requirements.",
 };
 
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+  { label: "SERVICES", href: "/services" },
+  { label: "PROJECTS", href: "/portfolio" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 export type Service = {
@@ -40,7 +32,7 @@ export type Service = {
 export const services: Service[] = [
   {
     title: "Web Development",
-    description: "Modern and scalable websites for your business.",
+    description: "Business websites, online stores and web applications.",
     icon: Code2,
     details: [
       "Company and e-commerce websites",
@@ -51,7 +43,8 @@ export const services: Service[] = [
   },
   {
     title: "Mobile App Development",
-    description: "Powerful and user-friendly mobile apps.",
+    description:
+      "Mobile apps planned for your users, features and target platforms.",
     icon: Smartphone,
     details: [
       "iOS and Android with React Native",
@@ -62,7 +55,8 @@ export const services: Service[] = [
   },
   {
     title: "Cloud Solutions",
-    description: "Reliable cloud solutions for better performance.",
+    description:
+      "Cloud databases, authentication and serverless application backends.",
     icon: Cloud,
     details: [
       "Firebase and Google Cloud setup",
@@ -73,7 +67,7 @@ export const services: Service[] = [
   },
   {
     title: "Digital Marketing",
-    description: "Grow your brand with smart marketing strategies.",
+    description: "SEO, content, social media and paid advertising services.",
     icon: BarChart3,
     details: [
       "Social media management",
@@ -84,82 +78,64 @@ export const services: Service[] = [
   },
 ];
 
-export const features: { label: string; icon: LucideIcon }[] = [
-  { label: "Innovative Solutions", icon: ShieldCheck },
-  { label: "Expert Support", icon: Headphones },
-  { label: "Secure & Reliable", icon: Lock },
-  { label: "Long-Term Partnership", icon: Handshake },
-];
-
-export const socials = [
-  { label: "Facebook", href: "https://facebook.com" },
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "YouTube", href: "https://youtube.com" },
-] as const;
-
-export const projects = [
+export const projectTypes = [
   {
-    title: "Pakistan Bus Booking App",
-    category: "Mobile App",
-    description: "Passenger, operator, driver and admin roles with live seat booking.",
-    tags: ["React Native", "Firebase"],
-  },
-  {
-    title: "Corporate Website Suite",
+    title: "Business website",
     category: "Web Development",
-    description: "Fast, SEO-friendly business websites with a custom CMS.",
-    tags: ["Next.js", "Tailwind CSS"],
+    description:
+      "A responsive site that introduces your business, explains your services and gives visitors a clear way to get in touch.",
+    tags: ["Business profile", "Service pages", "Contact form"],
   },
   {
-    title: "Cloud Inventory Platform",
+    title: "Online store",
+    category: "Web Development",
+    description:
+      "A product catalogue and shopping experience planned around your inventory, checkout needs and day-to-day operations.",
+    tags: ["Product catalogue", "Checkout", "Order management"],
+  },
+  {
+    title: "Mobile app",
+    category: "Mobile App Development",
+    description:
+      "A customer or team app scoped around the essential screens, user journeys and integrations your idea needs.",
+    tags: ["iOS and Android", "User experience", "App publishing"],
+  },
+  {
+    title: "Internal business dashboard",
     category: "Cloud Solutions",
-    description: "Real-time stock tracking for multi-branch retail businesses.",
-    tags: ["Firebase", "Cloud Functions"],
-  },
-  {
-    title: "Brand Growth Campaign",
-    category: "Digital Marketing",
-    description: "Social and search campaigns that tripled monthly leads.",
-    tags: ["SEO", "Social Ads"],
-  },
-  {
-    title: "Learning Management Portal",
-    category: "Web Development",
-    description: "Courses, quizzes and certificates for an education startup.",
-    tags: ["Next.js", "Firestore"],
-  },
-  {
-    title: "Delivery Tracking App",
-    category: "Mobile App",
-    description: "Rider and customer apps with real-time order tracking.",
-    tags: ["React Native", "Maps"],
+    description:
+      "An access-controlled web workspace to organize records and bring routine business tasks into one place.",
+    tags: ["Role-based access", "Cloud database", "Reporting"],
   },
 ];
 
-export const posts = [
+export const resources = [
   {
-    slug: "why-nextjs-for-business-websites",
-    title: "Why Next.js Is a Great Fit for Business Websites",
-    excerpt:
-      "Speed, SEO and developer experience make Next.js our default choice for company sites.",
-    date: "2025-10-12",
-    category: "Web",
+    title: "Next.js App Router",
+    description:
+      "Official documentation for routing, layouts, pages and other App Router features.",
+    category: "Web development",
+    href: "https://nextjs.org/docs/app",
   },
   {
-    slug: "firebase-for-small-teams",
-    title: "Firebase for Small Teams: What You Get Out of the Box",
-    excerpt:
-      "Authentication, database and hosting without managing servers. Here is how we use it.",
-    date: "2025-09-28",
+    title: "React: Learn the basics",
+    description:
+      "The React team’s guide to components, data, events and building user interfaces.",
+    category: "Web development",
+    href: "https://react.dev/learn",
+  },
+  {
+    title: "Cloud Firestore documentation",
+    description:
+      "Firebase’s official guide to its cloud-hosted NoSQL database and data model.",
     category: "Cloud",
+    href: "https://firebase.google.com/docs/firestore",
   },
   {
-    slug: "mobile-app-launch-checklist",
-    title: "A Practical Checklist Before You Launch Your Mobile App",
-    excerpt:
-      "From store listings to crash reporting, the steps we follow before every release.",
-    date: "2025-09-05",
-    category: "Mobile",
+    title: "SEO Starter Guide",
+    description:
+      "Google Search Central’s introduction to helping search engines understand your website.",
+    category: "Digital growth",
+    href: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
   },
 ];

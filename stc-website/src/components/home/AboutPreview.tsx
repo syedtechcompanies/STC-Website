@@ -1,55 +1,25 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { features } from "@/data/site";
-
-function BuildingVisual() {
-  return (
-    <svg viewBox="0 0 400 260" className="h-full w-full" role="img" aria-label="STC office building">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#cfe3f5" />
-          <stop offset="1" stopColor="#eaf3fb" />
-        </linearGradient>
-        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#3b5d7c" />
-          <stop offset="1" stopColor="#1f3a54" />
-        </linearGradient>
-      </defs>
-      <rect width="400" height="260" fill="url(#sky)" />
-      <path d="M150 40L370 0V230L150 250Z" fill="url(#glass)" />
-      {Array.from({ length: 7 }).map((_, i) => (
-        <line key={i} x1="150" x2="370" y1={70 + i * 25} y2={28 + i * 29} stroke="#8fb0cf" strokeOpacity="0.35" />
-      ))}
-      <text
-        x="170"
-        y="120"
-        fontSize="44"
-        fontWeight="800"
-        fontStyle="italic"
-        fill="#fff"
-        fontFamily="Arial, Helvetica, sans-serif"
-        transform="rotate(-6 170 120)"
-      >
-        STC
-      </text>
-      <ellipse cx="60" cy="200" rx="70" ry="60" fill="#2f7d3e" />
-      <ellipse cx="120" cy="220" rx="50" ry="50" fill="#256a33" />
-      <ellipse cx="330" cy="235" rx="60" ry="35" fill="#2f7d3e" />
-      <rect x="0" y="238" width="400" height="22" fill="#374151" />
-    </svg>
-  );
-}
+import { services } from "@/data/site";
+import frameImage from "@/data/Images/frame.png";
 
 export default function AboutPreview() {
   return (
-    <section className="py-8 sm:py-12">
-      <div className="container-site grid items-center gap-10 lg:grid-cols-[1fr_1fr_0.7fr]">
-        <div className="relative pb-4 pl-4">
-          <span className="absolute bottom-0 left-0 top-6 w-8 rounded-l-3xl bg-brand-700" />
-          <span className="absolute bottom-0 right-8 h-5 w-2/3 rounded-b-3xl bg-brand-700" />
-          <div className="relative aspect-[16/11] overflow-hidden rounded-3xl shadow-card">
-            <BuildingVisual />
+    <section className="py-10 sm:py-14 lg:py-16">
+      <div className="container-site grid items-center gap-10 lg:grid-cols-[1fr_1fr_0.75fr]">
+        <div className="relative pb-6 pl-5 sm:pb-9 sm:pl-10">
+          <span className="absolute left-0 top-3 h-[58%] w-7 sm:w-10 rounded-l-[20px] sm:rounded-l-[28px] bg-brand-700" />
+          <span className="absolute bottom-0 right-2 h-6 sm:h-9 w-[45%] rounded-b-[20px] sm:rounded-b-[28px] bg-brand-700" />
+          <div className="relative aspect-[3/2] overflow-hidden rounded-[18px] sm:rounded-[24px] shadow-card">
+            <Image
+              src={frameImage}
+              alt="STC company building surrounded by greenery"
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 38vw"
+              className="object-cover"
+            />
           </div>
         </div>
 
@@ -57,24 +27,27 @@ export default function AboutPreview() {
           <SectionHeading
             align="left"
             eyebrow="About STC"
-            title="A Trusted Tech Partner for Your Growth"
+            title="Digital services, shaped around your needs"
           />
-          <p className="mt-4 text-sm leading-relaxed text-ink">
-            At STC, we believe in the power of technology to create better opportunities. Our
-            team is passionate about delivering high-quality solutions.
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink">
+            From a business website to a cloud-backed app, explore the available
+            services and share the goals, constraints and features that matter
+            to your project.
           </p>
-          <Link href="/about" className="btn-primary mt-6">
-            Learn More <ArrowRight size={16} />
-          </Link>
+          <div className="mt-6">
+            <Link href="/about" className="btn-primary w-full sm:w-auto inline-flex justify-center">
+              Learn More <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
-        <ul className="space-y-4 border-gray-200 lg:border-l lg:pl-8">
-          {features.map(({ label, icon: Icon }) => (
-            <li key={label} className="flex items-center gap-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                <Icon size={20} />
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5 sm:gap-4 border-gray-100 sm:border-t sm:pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+          {services.map(({ title, icon: Icon }) => (
+            <li key={title} className="flex items-center gap-3.5 sm:gap-4 p-2 sm:p-0">
+              <span className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                <Icon size={18} />
               </span>
-              <span className="text-sm font-medium">{label}</span>
+              <span className="text-sm font-medium">{title}</span>
             </li>
           ))}
         </ul>

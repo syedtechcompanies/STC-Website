@@ -26,7 +26,7 @@ export default function HeroVisual() {
       {/* laptop screen */}
       <g transform="rotate(-6 400 190)">
         <rect x="300" y="60" width="240" height="160" rx="10" fill="#0b1210" stroke="#d1d5db" strokeWidth="4" />
-        <path d="M352 150C358 120 395 98 440 102C405 108 385 125 372 152Z" fill="#0f7a3a" />
+        <path d="M352 150C358 120 395 98 440 102C405 108 385 125 372 152Z" fill="#0ea5e9" />
         <text
           x="368"
           y="152"

@@ -8,7 +8,7 @@ import { submitInquiry } from "@/lib/inquiries";
 type Status = "idle" | "loading" | "success" | "error";
 
 const fieldClass =
-  "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-700 focus:ring-2 focus:ring-brand-100";
+  "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-base sm:text-sm outline-none transition focus:border-brand-700 focus:ring-2 focus:ring-brand-100 placeholder:text-gray-400";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -40,13 +40,13 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="card flex flex-col items-center p-10 text-center">
+      <div className="card flex flex-col items-center p-8 sm:p-10 text-center">
         <CheckCircle2 size={48} className="text-brand-700" />
         <h3 className="mt-4 text-xl font-bold">Thank you!</h3>
         <p className="mt-2 text-sm text-ink-soft">
-          We received your message and will get back to you shortly.
+          Your message has been received.
         </p>
-        <button type="button" onClick={() => setStatus("idle")} className="btn-primary mt-6">
+        <button type="button" onClick={() => setStatus("idle")} className="btn-primary mt-6 w-full sm:w-auto">
           Send another message
         </button>
       </div>
@@ -54,7 +54,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card space-y-4 p-6 sm:p-8">
+    <form onSubmit={handleSubmit} className="card space-y-4 p-5 sm:p-7 md:p-8">
       <div className="grid gap-4 sm:grid-cols-2">
         <input name="name" required minLength={2} maxLength={100} placeholder="Your name" className={fieldClass} />
         <input name="email" type="email" required placeholder="Email address" className={fieldClass} />
@@ -86,7 +86,7 @@ export default function ContactForm() {
         </p>
       )}
 
-      <button type="submit" disabled={status === "loading"} className="btn-primary disabled:opacity-60">
+      <button type="submit" disabled={status === "loading"} className="btn-primary w-full sm:w-auto inline-flex justify-center disabled:opacity-60">
         {status === "loading" ? "Sending..." : "Send Message"} <ArrowRight size={16} />
       </button>
     </form>

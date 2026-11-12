@@ -29,15 +29,15 @@ src/
     home/              Hero, Services, AboutPreview, Stats, CTA
     contact/           ContactForm (writes to Firestore)
     ui/                Logo, SectionHeading, PageHeader
-  data/site.ts         all site text: nav, services, projects, posts, contact info
+  data/site.ts         site copy, services, project ideas and official resources
   lib/                 firebase.ts, inquiries.ts
 ```
 
 ## Customising
 
-- Company text, services, projects and blog posts: edit `src/data/site.ts`.
+- Company text, services, project ideas and resource links: edit `src/data/site.ts`.
 - Brand colours: `tailwind.config.ts` (`brand` palette).
-- Contact email, phone and social links: `src/data/site.ts`.
+- Add only verified company contact details and social profile links before publishing them.
 - Real photos: replace `HeroVisual.tsx` and the building illustration in `AboutPreview.tsx`
   with `next/image` and files from `public/images/`.
 - Promo video: set `NEXT_PUBLIC_PROMO_VIDEO_URL` to a YouTube embed URL.

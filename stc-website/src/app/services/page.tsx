@@ -15,20 +15,20 @@ export default function ServicesPage() {
         description="Comprehensive technology solutions to help your business grow."
       />
 
-      <section className="py-16">
-        <div className="container-site grid gap-6 md:grid-cols-2">
+      <section className="py-10 sm:py-14 lg:py-16">
+        <div className="container-site grid gap-5 sm:gap-6 md:grid-cols-2">
           {services.map(({ title, description, icon: Icon, details }) => (
-            <article key={title} className="card p-8">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                <Icon size={26} />
+            <article key={title} className="card p-5 sm:p-7 md:p-8 transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+              <span className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+                <Icon size={24} />
               </span>
-              <h2 className="mt-5 text-xl font-bold">{title}</h2>
-              <p className="mt-2 text-ink-soft">{description}</p>
-              <ul className="mt-5 space-y-2.5">
+              <h2 className="mt-4 sm:mt-5 text-lg sm:text-xl font-bold">{title}</h2>
+              <p className="mt-2 text-sm sm:text-base text-ink-soft leading-relaxed">{description}</p>
+              <ul className="mt-5 space-y-2.5 border-t border-gray-50 pt-4">
                 {details.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm">
+                  <li key={item} className="flex items-start gap-2.5 text-sm leading-snug">
                     <Check size={16} className="mt-0.5 shrink-0 text-brand-700" />
-                    {item}
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
