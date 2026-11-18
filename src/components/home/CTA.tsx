@@ -12,6 +12,7 @@ export default function CTA() {
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1.5 text-xs font-bold text-brand-800">
               <Sparkles size={14} aria-hidden="true" />
               GOOD IDEAS START HERE
+              
             </span>
             <h2 className="mt-5 max-w-xl text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
               Got a big idea?
