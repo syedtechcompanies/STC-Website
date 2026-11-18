@@ -1,71 +1,39 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import {
-  Card,
-  Carousel,
-  ServiceModalContent,
-} from "@/components/ui/apple-cards-carousel";
-import modelingImage from "@/data/Images/3D Modeling Creative Studio Poster.png";
-import softwareImage from "@/data/Images/Modern Desktop Software Development Poster.png";
-import graphicDesignImage from "@/data/Images/Graphic Designing Creative Workspace.png";
-import videoEditingImage from "@/data/Images/Professional Video Editing Services.png";
-import webDevelopmentImage from "@/data/Images/Minimal Green Web Development Poster.png";
-import androidImage from "@/data/Images/Modern Android Development Poster.png";
-import problemSolvingImage from "@/data/Images/Problem Solving_ Your Solution Awaits.png";
 import { services } from "@/data/site";
 
-const serviceImages = [
-  webDevelopmentImage,
-  androidImage,
-  problemSolvingImage,
-  videoEditingImage,
-  graphicDesignImage,
-  softwareImage,
-  modelingImage,
-];
-
 export default function Services() {
-  const cards = services.map(({ title, description }, index) => (
-    <Card
-      key={title}
-      index={index}
-      card={{
-        category: `0${index + 1}`,
-        title,
-        description,
-        iconKey: title,
-        image: serviceImages[index],
-        content: <ServiceModalContent description={description} />,
-      }}
-    />
-  ));
-
   return (
-    <section className="py-10 sm:py-14 lg:py-16">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="container-site">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <SectionHeading
-            align="left"
-            eyebrow="Our Services"
-            title="Technology that moves you forward."
-          />
-          <div className="max-w-md md:pb-1">
-            <p className="text-sm leading-6 text-ink-soft sm:text-base">
-              From a first idea to a growing digital product, get the expertise
-              to make your next move with confidence.
-            </p>
-            <Link
-              href="/services"
-              className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-brand-700 transition-colors hover:text-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
-            >
-              Explore all services <ArrowUpRight size={16} />
-            </Link>
-          </div>
-        </div>
+        <SectionHeading
+          eyebrow="Our Services"
+          title="What We Offer"
+          description="Comprehensive technology solutions to help your business grow."
+        />
 
-        <div className="mt-4">
-          <Carousel items={cards} />
+        <div className="mt-10 sm:mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map(({ title, description, icon: Icon }) => (
+            <article
+              key={title}
+              className="card flex flex-col p-5 sm:p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <span className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+                <Icon size={24} />
+              </span>
+              <h3 className="mt-4 sm:mt-5 text-base sm:text-lg font-bold">{title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">{description}</p>
+              <div className="mt-5 pt-2 border-t border-gray-50">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 transition-all hover:gap-2.5"
+                >
+                  Learn More <ArrowRight size={14} />
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

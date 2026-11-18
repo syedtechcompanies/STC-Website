@@ -10,26 +10,25 @@
   }
 
   body {
-    @apply min-h-screen overflow-x-hidden bg-white font-sans text-ink antialiased;
-    display: flex;
-    flex-direction: column;
+    @apply bg-white font-sans text-ink antialiased overflow-x-hidden min-h-screen flex flex-col;
   }
 
   main {
-    flex: 1;
+    @apply flex-1;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-space-grotesk), sans-serif;
   }
 
+  /* Prevent content shifts on devices with overlay scrollbars */
   :root {
     color-scheme: light;
-  }
-
-  ::selection {
-    background: #dcf5e5;
-    color: #064e2b;
   }
 }
 
@@ -39,11 +38,11 @@
   }
 
   .btn {
-    @apply inline-flex select-none items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-[background-color,color,box-shadow,transform] duration-200 active:scale-[0.98] motion-reduce:transition-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.98] select-none;
   }
 
   .btn-primary {
-    @apply btn bg-brand-700 text-white shadow-cta hover:bg-brand-800 hover:shadow-md;
+    @apply btn bg-brand-700 text-white shadow-cta hover:bg-brand-800;
   }
 
   .btn-light {
@@ -51,115 +50,6 @@
   }
 
   .card {
-    @apply rounded-2xl border border-gray-100 bg-white shadow-card;
-  }
-}
-
-.services-carousel-scroll {
-  -ms-overflow-style: none !important;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none !important;
-}
-
-.services-carousel-scroll::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translate3d(0, 10px, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-
-.animate-fade-in {
-  animation: fade-in-up 520ms ease-out both;
-}
-
-@keyframes contact-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes contact-spark {
-  0%, 100% { opacity: 0.45; transform: scale(0.9) rotate(-8deg); }
-  50% { opacity: 1; transform: scale(1.05) rotate(4deg); }
-}
-
-@keyframes contact-map-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.28); }
-  50% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
-}
-
-@keyframes contact-cta-shine {
-  0% { transform: translateX(-130%) skewX(-18deg); }
-  55%, 100% { transform: translateX(250%) skewX(-18deg); }
-}
-
-.contact-reveal {
-  animation: fade-in-up 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-.contact-delay-1 { animation-delay: 80ms; }
-.contact-delay-2 { animation-delay: 150ms; }
-.contact-delay-3 { animation-delay: 220ms; }
-.contact-delay-4 { animation-delay: 290ms; }
-
-.contact-tile {
-  display: flex;
-  width: 82px;
-  height: 82px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 14px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(235,247,239,0.9));
-  color: #08733d;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
-}
-
-.contact-float-1 { animation: contact-float 3.2s ease-in-out infinite; }
-.contact-float-2 { animation: contact-float 3.2s 350ms ease-in-out infinite; }
-.contact-float-3 { animation: contact-float 3.2s 700ms ease-in-out infinite; }
-
-.contact-spark {
-  width: 42px;
-  height: 38px;
-  animation: contact-spark 2.4s ease-in-out infinite;
-}
-
-.contact-spark span {
-  position: absolute;
-  width: 4px;
-  height: 19px;
-  border-radius: 999px;
-  background: currentColor;
-}
-
-.contact-spark span:nth-child(1) { left: 3px; bottom: 1px; transform: rotate(-78deg); }
-.contact-spark span:nth-child(2) { left: 15px; bottom: 13px; transform: rotate(-48deg); }
-.contact-spark span:nth-child(3) { left: 31px; bottom: 18px; transform: rotate(-12deg); }
-
-.contact-map-pin { animation: contact-map-pulse 2s ease-out infinite; }
-
-.contact-cta::after {
-  position: absolute;
-  top: -40%;
-  bottom: -40%;
-  left: 18%;
-  width: 18%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  content: "";
-  pointer-events: none;
-  animation: contact-cta-shine 6s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    @apply rounded-2xl border border-gray-100 bg-white shadow-card transition-shadow duration-200;
   }
 }

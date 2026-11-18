@@ -1,11 +1,8 @@
 import {
   BarChart3,
-  Box,
+  Cloud,
   Code2,
-  Monitor,
-  Palette,
   Smartphone,
-  Wrench,
   type LucideIcon,
 } from "lucide-react";
 
@@ -14,14 +11,14 @@ export const siteConfig = {
   shortName: "STC",
   tagline: "Innovate • Build • Grow",
   description:
-    "Syed Tech Company builds practical digital solutions through web development, mobile applications, cloud services and thoughtful technology consulting.",
+    "Syed Tech Company offers web, mobile, cloud and digital marketing services. Explore the services and share your project requirements.",
 };
 
 export const navLinks = [
   { label: "HOME", href: "/" },
   { label: "ABOUT", href: "/about" },
   { label: "SERVICES", href: "/services" },
-  { label: "PROJECTS", href: "/project" },
+  { label: "PROJECTS", href: "/portfolio" },
   { label: "CONTACT", href: "/contact" },
 ];
 
@@ -35,79 +32,48 @@ export type Service = {
 export const services: Service[] = [
   {
     title: "Web Development",
-    description: "Modern and scalable websites for your business.",
+    description: "Business websites, online stores and web applications.",
     icon: Code2,
     details: [
       "Company and e-commerce websites",
-      "Next.js / React web applications",
+      "Next.js / React web apps",
       "Admin dashboards and portals",
       "Performance and SEO optimization",
     ],
   },
   {
     title: "Mobile App Development",
-    description: "Powerful and user-friendly mobile apps.",
+    description:
+      "Mobile apps planned for your users, features and target platforms.",
     icon: Smartphone,
     details: [
-      "iOS and Android applications",
-      "Clean, intuitive mobile experiences",
+      "iOS and Android with React Native",
+      "Clean, intuitive UI/UX",
       "Push notifications and offline support",
-      "App Store and Play Store preparation",
+      "Play Store / App Store publishing",
     ],
   },
   {
-    title: "Problem Solving",
-    description: "Expert support for resolving technical challenges.",
-    icon: Wrench,
+    title: "Cloud Solutions",
+    description:
+      "Cloud databases, authentication and serverless application backends.",
+    icon: Cloud,
     details: [
-      "Debugging and fixing errors",
-      "Resolving technical issues",
-      "Optimizing application performance",
-      "Practical guidance and support",
+      "Firebase and Google Cloud setup",
+      "Secure authentication and databases",
+      "Scalable serverless backends",
+      "Monitoring and backups",
     ],
   },
   {
     title: "Digital Marketing",
-    description: "Grow your brand with smart strategies.",
+    description: "SEO, content, social media and paid advertising services.",
     icon: BarChart3,
     details: [
-      "Search engine optimization",
-      "Social media strategy",
-      "Paid advertising campaigns",
+      "Social media management",
+      "SEO and content strategy",
+      "Paid ad campaigns",
       "Analytics and reporting",
-    ],
-  },
-  {
-    title: "UI/UX Design",
-    description: "Beautiful and user-friendly designs.",
-    icon: Palette,
-    details: [
-      "Website and app interface design",
-      "User journeys and wireframes",
-      "Responsive design systems",
-      "Usability-focused improvements",
-    ],
-  },
-  {
-    title: "Desktop Software Development",
-    description: "Custom desktop software built around your business needs.",
-    icon: Monitor,
-    details: [
-      "Business and productivity software",
-      "Desktop application development",
-      "Workflow automation tools",
-      "Software maintenance and support",
-    ],
-  },
-  {
-    title: "3D Modeling",
-    description: "Detailed 3D models for products and digital experiences.",
-    icon: Box,
-    details: [
-      "Product and concept models",
-      "3D assets for digital projects",
-      "Visual prototyping",
-      "Model refinement and export",
     ],
   },
 ];
@@ -157,6 +123,13 @@ export const resources = [
       "The React team’s guide to components, data, events and building user interfaces.",
     category: "Web development",
     href: "https://react.dev/learn",
+  },
+  {
+    title: "Cloud Firestore documentation",
+    description:
+      "Firebase’s official guide to its cloud-hosted NoSQL database and data model.",
+    category: "Cloud",
+    href: "https://firebase.google.com/docs/firestore",
   },
   {
     title: "SEO Starter Guide",
